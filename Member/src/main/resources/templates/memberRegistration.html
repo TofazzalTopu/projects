@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+
+    <title th:utext="${title}"></title>
+    <style>
+        th, td {
+            padding: 5px;
+        }
+        td span  {
+            font-size:90%;
+            font-style: italic;
+            color: red;
+        }
+        .error {
+            color: red;
+            font-style: italic;
+        }
+    </style>
+    <script type="javascript">
+
+    </script>
+
+</head>
+<body>
+<!-- Include _menu.html -->
+<th:block th:include="/_menu"></th:block>
+
+<h2>Register</h2>
+
+<div th:if="${errorMessage != null}"
+     th:utext="${errorMessage}" class="error">...</div>
+
+<form th:action="@{/member/register}" th:object="${member}" method="POST">
+    <table>
+        <tr>
+            <td>Member ID</td>
+            <td><input type="text" th:field="*{memberId}" /></td>
+            <td>
+                <span th:if="${#fields.hasErrors('memberId')}" th:errors="*{memberId}">..</span>
+            </td>
+        </tr>
+        <tr>
+            <td>User Name</td>
+            <td><input type="text" th:field="*{memberName}" /></td>
+            <td>
+                <span th:if="${#fields.hasErrors('memberName')}" th:errors="*{memberName}">..</span>
+            </td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" th:field="*{password}" /> </td>
+            <td>
+                <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">..</span>
+            </td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><input type="text" th:field="*{address}" /> </td>
+            <td>
+                <span th:if="${#fields.hasErrors('address')}" th:errors="*{address}">..</span>
+            </td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="text" th:field="*{email}" /> </td>
+            <td>
+                <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">..</span>
+            </td>
+        </tr>
+
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <input type="submit" value="Submit" />
+                <a th:href="@{/}">Cancel</a>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+</form>
+
+<script type="text/javascript"
+        th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+<script type="text/javascript"
+        th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+
+
+</body>
+</html>

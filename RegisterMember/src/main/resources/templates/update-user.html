@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <title>Update User</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"/>
+    <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">Update User</title>
+</head>
+<body>
+<div layout:fragment="content" th:remove="tag">
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h1>Update User page</h1>
+            <form th:action="@{/update/{id}(id=${user.id})}" method="post">
+                <!--<form action="#" method="post">-->
+                <div class="form-group">
+                    <label for="name">Username</label>:
+                    <input type="text" id="name" placeholder="Name">
+
+                    <div class="form-group">
+                        <label for="email">Password</label>:
+                        <input type="email"
+                               id="email"
+                               name="email"
+                               class="form-control"
+                               placeholder="email">
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-6 col-sm-offset-3">
+                                <input type="submit"
+                                       name="user-submit"
+                                       id="user-submit"
+                                       class="form-control btn btn-info"
+                                       value="Update User">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <p><a href="/" th:href="@{/}">Back to home page</a></p>
+
+</div>
+
+
+<script type="text/javascript"
+        th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+<script type="text/javascript"
+        th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+
+
+</body>
+</html>
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update user</title>
+</head>
+<body>
+<form action="#" th:action="@{/update/{id}(id=${user.id})}" th:object="${user}" method="post">
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="Name">
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+    <label for="email">Email</label>
+    <input type="text" th:field="*{email}" id="email" placeholder="Email">
+    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+    <input type="submit" value="Update User">
+</form>
+</body>
+</html>-->

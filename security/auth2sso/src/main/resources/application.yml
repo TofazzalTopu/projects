@@ -1,0 +1,24 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+#  session:
+#    cookie:
+#      name: UISESSION
+security:
+#  basic:
+#    enabled: false
+  oauth2:
+    client:
+      clientId: 0oa106m7rweCMzaFO4x6
+      clientSecret: zzDQeFbMQnNP4Q6FBD0buOOrhRMFndjihZcbQCOS
+      issuer: https://dev-578478.okta.com/oauth2/default
+      accessTokenUri: https://dev-578478.okta.com/oauth2/default/v1/token
+      userAuthorizationUri: https://dev-578478.oktapreview.com/oauth2/default/v1/authorize
+      authentication-scheme: form
+      scope: openid profile email
+    resource:
+      userInfoUri: https://dev-578478.okta.com/oauth2/default/v1/userinfo
+spring:
+  thymeleaf:
+    cache: false

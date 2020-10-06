@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.info"
+    },
+    "jhipsterVersion": "6.6.0",
+    "applicationType": "monolith",
+    "baseName": "springBootReact",
+    "packageName": "com.info",
+    "packageFolder": "com/info",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "mongodb",
+    "devDatabaseType": "mongodb",
+    "prodDatabaseType": "mongodb",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "Y2Y4MWVhODFiZmExMTU5MWJjYjAzMWFjYTk5OTgxM2ExMzE1YjA0OWY5MTdlNzhhOTdhMjExYjliNzgwZDFhNzM5ZTYzYTUyYTVmM2U5YmNiMmYwOGMwNTg0OTZkY2NiZmJiY2FjOTg3ZjU1NGM4ODI2N2JlZDE1ODQ0ZTRlYjk=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "react",
+    "clientTheme": "cyborg",
+    "clientThemeVariant": "light",
+    "creationTimestamp": 1583679202266,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "blueprints": []
+  }
+}

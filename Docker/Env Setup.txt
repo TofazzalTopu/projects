@@ -1,0 +1,47 @@
+=> Downloading the Docker Compose File
+To download the Spring Cloud Data Flow Server Docker Compose file, run the following command:
+
+=> wget https://raw.githubusercontent.com/spring-cloud/spring-cloud-dataflow/master/spring-cloud-dataflow-server/docker-compose.yml
+
+=> If wget is unavailable, you can use curl or another platform-specific utility. Click here to download the docker-compose.yml file.
+
+=> The Docker Compose file starts instances of the following products:
+
+Spring Cloud Data Flow Server
+Spring Cloud Skipper Server
+MySQL
+Apache Kafka
+===
+=> 
+Starting Docker Compose
+In the directory where you downloaded docker-compose.yml, start the system, by running the following commands:
+
+COPY
+export DATAFLOW_VERSION=2.4.0.BUILD-SNAPSHOT
+export SKIPPER_VERSION=2.3.0.BUILD-SNAPSHOT
+docker-compose up
+=> 
+For Windows:
+If you use Windows, you can define environment variables by using the set command. To start the system on Windows, enter the following commands:
+
+COPY
+C:\ set DATAFLOW_VERSION=2.4.0.BUILD-SNAPSHOT
+C:\ set SKIPPER_VERSION=2.3.0.BUILD-SNAPSHOT
+C:\ docker-compose up
+
+Spring Cloud Data Flow is ready for use once the docker-compose command stops emitting log messages.
+
+=>
+The docker-compose.yml file defines DATAFLOW_VERSION and SKIPPER_VERSION variables, so that you can easily change those values. The preceding commands first set the DATAFLOW_VERSION and SKIPPER_VERSION to use and then start docker-compose.
+
+You can also use a shorthand version that exposes only the DATAFLOW_VERSION and SKIPPER_VERSION variables to the docker-compose process (rather than setting it in the environment), as follows:
+
+DATAFLOW_VERSION=2.4.0.BUILD-SNAPSHOT SKIPPER_VERSION=2.3.0.BUILD-SNAPSHOT docker-compose up
+
+=> Stopping Spring Cloud Data Flow
+When you want to shut down Spring Cloud Data Flow, you can use the docker-compose down command. To do so:
+
+Open a new terminal window.
+Change directory to the directory in which you started (where the docker-compose.yml file is located).
+Run the following command:
+DATAFLOW_VERSION=2.4.0.BUILD-SNAPSHOT SKIPPER_VERSION=2.3.0.BUILD-SNAPSHOT docker-compose down
